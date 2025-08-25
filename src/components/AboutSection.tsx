@@ -212,52 +212,7 @@ export function AboutSection() {
                   className="w-full h-[600px] object-cover transition-all duration-500"
                 />
                 
-                {/* Image overlay with company stats */}
-                <motion.div
-                  className="absolute bottom-8 left-8 right-8 bg-black/90 text-white p-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ delay: 1.6, duration: 0.4 }}
-                >
-                  <motion.div
-                    className="flex justify-between items-center"
-                    variants={containerVariants}
-                  >
-                    <div className="text-center">
-                      <motion.div
-                        className="text-2xl font-black text-red-500"
-                        initial={{ scale: 0 }}
-                        animate={isInView ? { scale: 1 } : { scale: 0 }}
-                        transition={{ delay: 1.8, type: "spring", stiffness: 500 }}
-                      >
-                        2018年
-                      </motion.div>
-                      <div className="text-xs text-gray-300">設立</div>
-                    </div>
-                    <div className="text-center">
-                      <motion.div
-                        className="text-2xl font-black text-red-500"
-                        initial={{ scale: 0 }}
-                        animate={isInView ? { scale: 1 } : { scale: 0 }}
-                        transition={{ delay: 2, type: "spring", stiffness: 500 }}
-                      >
-                        500+
-                      </motion.div>
-                      <div className="text-xs text-gray-300">クライアント数</div>
-                    </div>
-                    <div className="text-center">
-                      <motion.div
-                        className="text-2xl font-black text-red-500"
-                        initial={{ scale: 0 }}
-                        animate={isInView ? { scale: 1 } : { scale: 0 }}
-                        transition={{ delay: 2.2, type: "spring", stiffness: 500 }}
-                      >
-                        99.99%
-                      </motion.div>
-                      <div className="text-xs text-gray-300">顧客満足度</div>
-                    </div>
-                  </motion.div>
-                </motion.div>
+                
               </motion.div>
             </motion.div>
 
