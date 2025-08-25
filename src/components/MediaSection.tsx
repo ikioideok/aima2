@@ -57,64 +57,28 @@ export function MediaSection() {
 
   const mediaItems = [
     {
-      type: "case-study",
-      title: "ECサイト売上300%向上",
-      company: "株式会社テクノロジー",
-      description: "AIによるパーソナライゼーション導入により、3ヶ月でコンバージョン率が劇的に改善",
-      metrics: [
-        { label: "売上向上", value: "300%" },
-        { label: "CVR改善", value: "250%" },
-        { label: "ROAS", value: "480%" }
-      ],
-      category: "E-Commerce"
+      type: "press",
+      title: "SEO記事 01",
+      source: "AIMA Media",
+      description: "検索上位を狙うための最新SEOトレンドと、実務に活かせる実践ポイントをわかりやすく解説。",
+      date: "2025.01.15",
+      category: "SEO"
     },
     {
       type: "press",
-      title: "AI Marketing Awards 2024 最優秀賞受賞",
-      source: "TechCrunch Japan",
-      description: "革新的なAIマーケティングソリューションが業界最高峰の評価を獲得",
-      date: "2024.08.15",
-      category: "Award"
-    },
-    {
-      type: "video",
-      title: "AIマーケティングの未来",
-      description: "CEOが語る、AIがもたらすマーケティング革命の全貌",
-      duration: "12:30",
-      views: "125k",
-      category: "Interview"
-    },
-    {
-      type: "case-study",
-      title: "製造業のデジタル変革",
-      company: "グローバル製造株式会社",
-      description: "従来型製造業のマーケティングを完全デジタル化し、新規顧客獲得数を5倍に拡大",
-      metrics: [
-        { label: "リード獲得", value: "500%" },
-        { label: "コスト削減", value: "60%" },
-        { label: "効率向上", value: "380%" }
-      ],
-      category: "Manufacturing"
+      title: "SEO記事 02",
+      source: "AIMA Media",
+      description: "AIを活用したコンテンツ最適化の考え方と、成果につながるキーワード戦略の作り方。",
+      date: "2025.01.20",
+      category: "SEO"
     },
     {
       type: "press",
-      title: "AIマーケティング市場予測レポート発表",
-      source: "日経新聞",
-      description: "2025年までのAIマーケティング市場の成長予測と業界動向を詳細分析",
-      date: "2024.07.22",
-      category: "Report"
-    },
-    {
-      type: "case-study",
-      title: "SaaS企業の急成長支援",
-      company: "クラウドソリューションズ",
-      description: "AIドリブンなマーケティング戦略により、ARRを18ヶ月で10倍に成長",
-      metrics: [
-        { label: "ARR成長", value: "1000%" },
-        { label: "CAC削減", value: "70%" },
-        { label: "LTV向上", value: "420%" }
-      ],
-      category: "SaaS"
+      title: "SEO記事 03",
+      source: "AIMA Media",
+      description: "サイト構造の見直しでCVRを高める、テクニカルSEOの基本とチェックリスト。",
+      date: "2025.01.28",
+      category: "SEO"
     }
   ];
 
@@ -164,8 +128,8 @@ export function MediaSection() {
             variants={titleVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            実際の成果とメディア掲載実績。
-            数字が証明する、AIMAの確かな実力をご覧ください。
+            課題解決につながる情報を、記事として発信しています。<br />
+            企業の成長を支えるヒントを、メディアからお届けします。
           </motion.p>
         </motion.div>
 
@@ -351,64 +315,7 @@ export function MediaSection() {
           ))}
         </motion.div>
 
-        {/* Bottom Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.9 }}
-          transition={{ delay: 1.2, type: "spring", stiffness: 300, damping: 25 }}
-          className="mt-16"
-        >
-          <motion.div
-            className="bg-black text-white p-12 relative overflow-hidden"
-            whileHover={{ scale: 1.02, rotateX: 2 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-          >
-            <motion.div
-              className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-white to-red-500"
-              initial={{ scaleX: 0, skewX: -20 }}
-              whileInView={{ scaleX: 1, skewX: 0 }}
-              transition={{ delay: 1.5, duration: 0.8, ease: "easeOut" }}
-            />
-            
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              {[
-                { number: "500+", label: "成功事例" },
-                { number: "50+", label: "メディア掲載" },
-                { number: "25+", label: "業界アワード" },
-                { number: "99.9%", label: "顧客満足度" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  whileHover={{ 
-                    scale: 1.1, 
-                    y: -5,
-                    transition: { type: "spring", stiffness: 400, damping: 25 }
-                  }}
-                  transition={{ 
-                    delay: 1.8 + index * 0.1, 
-                    type: "spring", 
-                    stiffness: 300, 
-                    damping: 25 
-                  }}
-                  className="cursor-pointer"
-                >
-                  <motion.div 
-                    className="text-4xl md:text-5xl font-black text-red-500 mb-2"
-                    whileHover={{ rotate: [0, -5, 5, 0] }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {stat.number}
-                  </motion.div>
-                  <div className="text-gray-300 font-light tracking-wide">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </motion.div>
+        {/* Bottom Stats section removed as requested */}
       </div>
     </section>
   );

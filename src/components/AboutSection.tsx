@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Quote, Zap, Target, Heart } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
 export function AboutSection() {
@@ -63,23 +63,7 @@ export function AboutSection() {
     },
   };
 
-  const values = [
-    {
-      icon: Zap,
-      title: "革新への情熱",
-      description: "常に最新技術を追求し、業界を牽引する"
-    },
-    {
-      icon: Target,
-      title: "顧客第一主義",
-      description: "お客様の成功が私たちの成功"
-    },
-    {
-      icon: Heart,
-      title: "チームワーク",
-      description: "多様性を活かし、共に成長する"
-    },
-  ];
+  // Values section removed per request
 
   return (
     <section id="about" className="py-20 bg-white relative overflow-hidden">
@@ -131,10 +115,34 @@ export function AboutSection() {
                 animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -180 }}
                 transition={{ delay: 0.8, type: "spring", stiffness: 300 }}
               />
-              <h3 className="text-4xl md:text-5xl font-black text-black tracking-tight mb-6">
-                データが創る
-                <span className="text-red-500">未来</span>
+              <h3
+                className="text-4xl md:text-5xl font-black text-black tracking-tight mb-6"
+                style={{ fontFamily: '"Noto Sans JP", ui-sans-serif, system-ui, sans-serif' }}
+              >
+                AIで解決する
+                <br />
+                企業の<span className="text-red-500">マーケティング課題</span>
               </h3>
+              {/* Elegant animated description under the heading */}
+              <motion.div
+                variants={containerVariants}
+                className="mt-4 md:mt-6 space-y-3 md:space-y-4"
+              >
+                <motion.p
+                  variants={itemVariants}
+                  className="text-base md:text-lg text-gray-700 leading-relaxed font-light"
+                  style={{ fontFamily: '"Noto Sans JP", ui-sans-serif, system-ui, sans-serif' }}
+                >
+                  人手不足の時代に、AIで企業を支える。
+                </motion.p>
+                <motion.p
+                  variants={itemVariants}
+                  className="text-base md:text-lg text-gray-700 leading-relaxed font-light"
+                  style={{ fontFamily: '"Noto Sans JP", ui-sans-serif, system-ui, sans-serif' }}
+                >
+                  株式会社AIMAは日本の未来のために、AIを活用して企業の課題を解決し、成長を加速させていきます。
+                </motion.p>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -148,62 +156,21 @@ export function AboutSection() {
                 transition={{ delay: 1, duration: 0.6 }}
               />
               <Quote className="h-8 w-8 text-red-500 mb-4" />
-              <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed font-light italic mb-6">
-                「AIは単なる技術ではありません。それは人間の可能性を拡張し、
-                ビジネスの本質を変革する力です。私たちは、データに魂を込め、
-                お客様と共に未来を創造していきます。」
+              <blockquote className="text-sm md:text-base text-gray-700 leading-relaxed font-light italic mb-6">
+                今、日本は深刻な人手不足に陥っています。国力は年々低下。この流れは、今後、さらに加速していくでしょう。<br />
+                私はこの現状に危機感を覚え、日本の企業が持つ文化や精神、技術などをAIで守り、さらに加速させていきたいと考えています。<br />
+                どのようなことでも構いませんので、ぜひ一度、お気軽にご相談ください。
               </blockquote>
               <div className="flex items-center">
                 <div className="w-1 h-12 bg-red-500 mr-4" />
                 <div>
-                  <p className="font-bold text-black">田中 太郎</p>
+                  <p className="font-bold text-black">水間 雄紀</p>
                   <p className="text-sm text-gray-500">代表取締役CEO</p>
                 </div>
               </div>
             </motion.div>
 
-            {/* Company Values */}
-            <motion.div
-              variants={containerVariants}
-              className="space-y-6"
-            >
-              <motion.h4
-                variants={itemVariants}
-                className="text-2xl font-bold text-black tracking-tight"
-              >
-                私たちの価値観
-              </motion.h4>
-              
-              <div className="space-y-4">
-                {values.map((value, index) => (
-                  <motion.div
-                    key={value.title}
-                    variants={itemVariants}
-                    whileHover={{ 
-                      x: 10, 
-                      transition: { type: "spring", stiffness: 400, damping: 25 } 
-                    }}
-                    className="flex items-start space-x-4 p-4 border border-black/10 hover:border-red-500 transition-all duration-300 group cursor-pointer"
-                  >
-                    <motion.div
-                      className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center group-hover:bg-black transition-colors duration-300"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <value.icon className="h-6 w-6 text-white" />
-                    </motion.div>
-                    <div>
-                      <h5 className="font-bold text-black group-hover:text-red-500 transition-colors duration-300">
-                        {value.title}
-                      </h5>
-                      <p className="text-gray-600 font-light text-sm">
-                        {value.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+            {/* Company Values section removed */}
           </motion.div>
 
           {/* Right Side - CEO Image */}
@@ -240,9 +207,9 @@ export function AboutSection() {
                 transition={{ delay: 0.8, duration: 0.6, type: "spring", stiffness: 200 }}
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1736939615657-590b2dce72cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMGJ1c2luZXNzJTIwZXhlY3V0aXZlJTIwQ0VPJTIwcG9ydHJhaXQlMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzU2MDU3Nzd8fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="AIMA CEO 田中太郎"
-                  className="w-full h-[600px] object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
+                  src="/images/ceo.png"
+                  alt="AIMA CEO 水間 雄紀"
+                  className="w-full h-[600px] object-cover transition-all duration-500"
                 />
                 
                 {/* Image overlay with company stats */}
@@ -263,9 +230,9 @@ export function AboutSection() {
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
                         transition={{ delay: 1.8, type: "spring", stiffness: 500 }}
                       >
-                        2019
+                        2018年
                       </motion.div>
-                      <div className="text-xs text-gray-300">設立年</div>
+                      <div className="text-xs text-gray-300">設立</div>
                     </div>
                     <div className="text-center">
                       <motion.div
@@ -285,9 +252,9 @@ export function AboutSection() {
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
                         transition={{ delay: 2.2, type: "spring", stiffness: 500 }}
                       >
-                        25+
+                        99.99%
                       </motion.div>
-                      <div className="text-xs text-gray-300">受賞歴</div>
+                      <div className="text-xs text-gray-300">顧客満足度</div>
                     </div>
                   </motion.div>
                 </motion.div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, MessageSquare } from 'lucide-react';
+import { Send, MessageSquare } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -58,26 +58,7 @@ export function ContactSection() {
     },
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "メール",
-      value: "contact@aima.com",
-      description: "24時間以内に返信",
-    },
-    {
-      icon: Phone,
-      title: "電話",
-      value: "03-1234-5678",
-      description: "平日 9:00-18:00",
-    },
-    {
-      icon: MapPin,
-      title: "オフィス",
-      value: "東京都渋谷区...",
-      description: "渋谷駅徒歩5分",
-    },
-  ];
+  // Contact methods removed per request
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -125,8 +106,8 @@ export function ContactSection() {
             variants={itemVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            AIマーケティングの未来を、一緒に創造しませんか？
-            あなたのビジネスの可能性を、今すぐご相談ください。
+            AIを活用したマーケティングについて、お気軽にご相談ください。<br />
+            御社の課題に寄り添い、最適な解決策をご提案いたします。
           </motion.p>
         </motion.div>
 
@@ -137,100 +118,46 @@ export function ContactSection() {
             animate={isInView ? "visible" : "hidden"}
             variants={slideVariants}
           >
-            <motion.h3 
-              className="text-4xl md:text-5xl mb-8 font-black text-black tracking-tight"
-              variants={itemVariants}
-            >
-              お気軽に
-              <span className="text-red-500">お問い合わせ</span>
-              ください
-            </motion.h3>
-            
-            <motion.p 
-              className="text-gray-600 mb-12 leading-relaxed font-light text-lg"
-              variants={itemVariants}
-            >
-              無料コンサルテーションで、あなたのビジネスに最適なAIソリューションをご提案します。
-              専門チームがお客様の課題を詳しく分析し、具体的な改善策をお示しいたします。
-            </motion.p>
 
-            {/* Contact Methods */}
-            <motion.div
-              variants={containerVariants}
-              className="space-y-6"
-            >
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  variants={itemVariants}
-                  whileHover={{ 
-                    x: 15, 
-                    scale: 1.02,
-                    transition: { type: "spring", stiffness: 400, damping: 25 } 
-                  }}
-                  className="group flex items-start space-x-6 p-6 border border-black/10 transition-all duration-300 hover:border-red-500 hover:shadow-xl cursor-pointer"
-                >
-                  <motion.div 
-                    className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center group-hover:bg-black transition-colors duration-300"
-                    whileHover={{ 
-                      rotate: [0, -10, 10, 0],
-                      scale: [1, 1.1, 1.1, 1]
-                    }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <info.icon className="h-6 w-6 text-white" />
-                  </motion.div>
-                  <div>
-                    <motion.h4 
-                      className="text-xl font-bold text-black mb-1 group-hover:text-red-500 transition-colors duration-300"
-                      whileHover={{ x: 5 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    >
-                      {info.title}
-                    </motion.h4>
-                    <p className="text-lg text-black font-medium mb-1">
-                      {info.value}
-                    </p>
-                    <p className="text-gray-500 text-sm font-light">
-                      {info.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Quick Response Promise */}
+            {/* Company Information */}
             <motion.div
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
               transition={{ delay: 1, type: "spring", stiffness: 300, damping: 25 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="mt-12 p-8 bg-black text-white relative overflow-hidden cursor-pointer"
+              className="mt-12 p-8 bg-gray-50 border border-black/10 text-black relative overflow-hidden"
             >
               <motion.div
-                className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-white"
-                initial={{ scaleX: 0, skewX: -30 }}
-                whileInView={{ scaleX: 1, skewX: 0 }}
-                transition={{ delay: 1.3, duration: 0.6, ease: "easeOut" }}
+                className="absolute top-0 left-0 w-full h-1 bg-red-500"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ delay: 1.2, duration: 0.6, ease: "easeOut" }}
               />
-              <motion.div 
-                className="flex items-center mb-4"
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              <motion.h4 
+                className="text-xl font-bold tracking-tight mb-4"
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  <Clock className="h-6 w-6 text-red-500 mr-3" />
-                </motion.div>
-                <h4 className="text-xl font-bold tracking-tight">迅速対応をお約束</h4>
-              </motion.div>
-              <p className="text-gray-300 font-light leading-relaxed">
-                お問い合わせをいただいてから24時間以内に、
-                専門スタッフがご連絡いたします。
-                緊急のご相談にも対応可能です。
-              </p>
+                会社情報
+              </motion.h4>
+              <div className="space-y-3 text-sm leading-relaxed">
+                <div>
+                  <span className="font-semibold">会社名</span>
+                  <div>株式会社AIMA (AIMA Inc.)</div>
+                </div>
+                <div>
+                  <span className="font-semibold">所在地</span>
+                  <div>大阪府大阪市北区梅田一丁目2番2号　大阪駅前第2ビル2階5-6号室</div>
+                </div>
+                <div>
+                  <span className="font-semibold">設立</span>
+                  <div>2018年</div>
+                </div>
+                <div>
+                  <span className="font-semibold">事業内容</span>
+                  <div>AIマーケティング、AI関連メディア運営</div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
 

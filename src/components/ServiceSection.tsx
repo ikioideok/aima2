@@ -56,40 +56,106 @@ export function ServiceSection() {
 
   const services = [
     {
-      icon: Brain,
-      title: "AIマーケティング戦略",
-      description: "機械学習とビッグデータ解析により、最適なマーケティング戦略を自動生成。競合他社の一歩先を行く革新的なアプローチを提供します。",
-      features: ["予測分析", "自動最適化", "競合分析"],
+      icon: TrendingUp,
+      title: "SEO支援",
+      description: (
+        <>
+          <span className="font-bold">AIで効率化しつつ、成果につながるSEO施策を。</span>
+          <br />
+          <br />
+          従来の外注に頼るSEOはコストが高く、成果の見えづらさも課題でした。
+          <br />
+          弊社では企業ごとにカスタマイズした、誰でも高品質な記事を数分で生成できる「記事作成ツール」を提供。
+          <br />
+          外注費を<span className="text-red-500">半分以下</span>にすることを目指します。
+        </>
+      ),
+      features: [],
     },
     {
       icon: Target,
-      title: "パーソナライゼーション",
-      description: "個々の顧客の行動パターンを分析し、一人ひとりに最適化されたコンテンツとエクスペリエンスを創出します。",
-      features: ["行動解析", "動的コンテンツ", "リアルタイム配信"],
-    },
-    {
-      icon: BarChart3,
-      title: "データ分析・可視化",
-      description: "複雑なマーケティングデータを直感的なダッシュボードで可視化。意思決定を加速する洞察を提供します。",
-      features: ["リアルタイム分析", "予測レポート", "KPI追跡"],
-    },
-    {
-      icon: Zap,
-      title: "自動化プラットフォーム",
-      description: "マーケティングプロセス全体を自動化し、効率性と精度を飛躍的に向上させる次世代プラットフォーム。",
-      features: ["ワークフロー自動化", "スケジューリング", "A/Bテスト"],
+      title: "広告運用最適化",
+      description: (
+        <>
+          <span className="font-bold">ムダを省き、投資対効果を最大化。</span>
+          <br />
+          <br />
+          広告費を増やしても成果が比例しない、そんな悩みを抱える企業は少なくありません。
+          <br />
+          AIによるデータ解析で無駄な出稿を抑え、<span className="text-red-500">費用対効果</span>を改善。
+          <br />
+          クリエイティブ検証やA/Bテストを繰り返し、最適な広告運用を実現します。
+        </>
+      ),
+      features: [],
     },
     {
       icon: Users,
-      title: "カスタマージャーニー最適化",
-      description: "顧客の全てのタッチポイントを最適化し、コンバージョン率とカスタマーエクスペリエンスを向上させます。",
-      features: ["ジャーニーマッピング", "タッチポイント分析", "UX最適化"],
+      title: "SNSマーケティング",
+      description: (
+        <>
+          <span className="font-bold">共感を生み、顧客とのつながりを。</span>
+          <br />
+          <br />
+          情報発信があふれる時代、単なる投稿では顧客の心を動かすことはできません。
+          <br />
+          弊社ではAIを活用した分析と、ユーザー視点の企画運営を組み合わせ、SNSを企業の資産に変えていきます。
+          <br />
+          フォロワー数のみならず、<span className="text-red-500">エンゲージメント</span>とブランド信頼を重視した支援を行います。
+        </>
+      ),
+      features: [],
     },
     {
-      icon: TrendingUp,
-      title: "成長戦略コンサルティング",
-      description: "AIが導き出した洞察をもとに、持続可能な成長戦略を策定。事業拡大を確実に支援します。",
-      features: ["戦略立案", "成長予測", "ROI最適化"],
+      icon: Brain,
+      title: "コンサルティング",
+      description: (
+        <>
+          <span className="font-bold">課題解決から、次の成長へ。</span>
+          <br />
+          <br />
+          表面的な施策ではなく、企業の本質的な課題に向き合います。
+          <br />
+          AIによるデータ解析をもとに、経営者や担当者と共に戦略を立案。
+          <br />
+          短期的な成果はもちろん、<span className="text-red-500">中長期的な成長</span>を見据えたマーケティング戦略を伴走型で支援します。
+        </>
+      ),
+      features: [],
+    },
+    {
+      icon: Zap,
+      title: "AI導入支援",
+      description: (
+        <>
+          <span className="font-bold">AIを現場に定着させ、成果につなげる。</span>
+          <br />
+          <br />
+          AIツールを導入するだけでは効果は出ません。
+          <br />
+          弊社では要件定義から導入、研修、運用サポートまで一貫して支援。
+          <br />
+          「<span className="text-red-500">現場で使えるAI活用</span>」を実現し、企業が自走できる仕組みを構築します。
+        </>
+      ),
+      features: [],
+    },
+    {
+      icon: BarChart3,
+      title: "マーケティング自動化",
+      description: (
+        <>
+          <span className="font-bold">業務を効率化し、戦略に集中できる環境を。</span>
+          <br />
+          <br />
+          繰り返し発生する業務をAIで自動化。
+          <br />
+          人手不足を解消するとともに、成果につながる業務環境を実現します。
+          <br />
+          <span className="text-red-500">人的リソースを削減</span>し、担当者がより付加価値の高い業務に集中できる体制をつくります。
+        </>
+      ),
+      features: [],
     },
   ];
 
@@ -127,8 +193,8 @@ export function ServiceSection() {
             variants={titleVariants}
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            AIの力で、マーケティングの可能性を無限に拡張します。
-            データドリブンなアプローチで、確実な成果をお約束します。
+            常に寄り添い、未来へと続く成長を。<br />
+            AIで企業の課題を解決し、新たな成長を実現します。
           </motion.p>
         </motion.div>
 
@@ -237,7 +303,8 @@ export function ServiceSection() {
           transition={{ delay: 1.5, type: "spring", stiffness: 300, damping: 25 }}
           className="text-center mt-16"
         >
-          <motion.div
+          <motion.a
+            href="#contact"
             whileHover={{ 
               scale: 1.05,
               rotateX: 5,
@@ -255,13 +322,14 @@ export function ServiceSection() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               />
               <h3 className="text-3xl mb-2 font-black tracking-tighter relative z-10">
-                カスタムソリューション
+                気軽に相談してみる
               </h3>
               <p className="text-gray-300 group-hover:text-white relative z-10 transition-colors duration-300">
-                あなたのビジネスに最適なAIソリューションを設計します
+                「とりあえず相談してみたい」そんな軽いお問い合わせも大歓迎です。<br />
+                気軽にご連絡ください。
               </p>
             </div>
-          </motion.div>
+          </motion.a>
         </motion.div>
       </div>
     </section>

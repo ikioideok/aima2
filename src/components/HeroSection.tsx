@@ -130,7 +130,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-16 max-w-3xl mx-auto font-light tracking-wide leading-relaxed"
         >
-          データとアルゴリズムで、マーケティングの未来を創造する。
+          マーケティングの課題を、AIで解決し確かな成果に。
         </motion.p>
       </motion.div>
 
